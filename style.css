@@ -1,0 +1,116 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    color: inherit;
+    border-style: none;
+}
+
+.tarefas  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.configs {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.configs > * {
+    background-color: transparent;
+    box-shadow: 3px 2px 51px -10px rgba(82,82,82,0.2) inset;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgb(44, 44, 44);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.configs > *:hover {
+    color: black;
+    background-color: rgba(82,82,82,0.1);
+    box-shadow: 2px 2px 32px 5px rgba(115,115,115,0.2);
+}
+
+.info {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+}
+
+.tarefa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(46, 41, 41);
+    font-weight: bold;
+
+    width: 320px;
+    height: auto;
+    padding: 24px 0 12px 0;
+    border-radius: 12px;
+    box-shadow: 2px 2px 32px 5px rgba(115,115,115,0.39);
+    box-shadow: 3px 2px 51px -10px rgba(82,82,82,0.2) inset;
+}
+
+.tarefa p {
+    color: rgb(73, 54, 54);
+}
+
+#status {
+    background-color: rgb(44, 46, 46);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 1.4vw;
+    padding: 4px;
+}
+
+#change {
+    background-color: rgb(255, 115, 0);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 1.4vw;
+    padding: 4px;
+}
+
+#close {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 1.4vw;
+    padding: 4px;
+}
+
+#close:hover,
+#change:hover,
+#status:hover {
+    scale: 1.2;
+    transition: 0.1s all linear;
+}
+
+#pronto {
+    background-color: greenyellow;
+}
+
+#aguardando {
+    background-color: rgb(255, 239, 149);
+}
+
+#lista h1 {
+    font-size: 24px;
+}
+
+#lista > div {
+    margin-bottom: 24px;
+}
