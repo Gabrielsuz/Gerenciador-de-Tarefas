@@ -2,21 +2,7 @@ if(localStorage.getItem('numeroTarefa') == null){
     localStorage.setItem('numeroTarefa', 0)
 }
 
-fetch("https://raw.githubusercontent.com/Gabrielsuz/Gerenciador-de-Tarefas/main/version.json")
-.then(res => res.json())
-.then(data => {
 
-    $("#versao").text(
-        "Versão: " + data.version
-    );
-
-});
-
-$("#versao").text("Versão: " + data.version);
-
-if(data.version != versaoAtual){
-    $("#update").show();
-}
 
 $(function() {
     $("#confirmar").click(function () { 

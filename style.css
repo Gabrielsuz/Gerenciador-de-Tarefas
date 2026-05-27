@@ -122,16 +122,6 @@
     padding: 4px;
 }
 
-#update {
-    display: none;
-    background-color: rgb(255, 166, 0);
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    border-radius: 16px;
-    margin: 12px;
-}
-
 #change {
     background-color: rgb(255, 115, 0);
     color: white;
