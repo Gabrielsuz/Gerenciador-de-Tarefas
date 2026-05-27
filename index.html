@@ -11,13 +11,18 @@
 </head>
 <body>
     <section class="tarefas">
+        <span id="update"><i class="fa-solid fa-triangle-exclamation"></i> NOVA VERSÃO DISPONIVEL!</span>
         <h1>Gerenciador de Tarefas</h1>
+        <p>Organize, acompanhe e gerencie suas tarefas de forma simples, rápida e eficiente.</p>
+        <p id="versao">Versão:</p>
         <div class="configs">
-            <input type="text" id="titulo" placeholder="Digite um Titulo">
-            <input type="text" id="texto" placeholder="Digite a descrição">
-            <input type="text" id="temp" placeholder="Digite a duração">
-            <button id="confirmar">Confirmar</button>
-            <button id="limpar">Limpar</button>
+            <div class="configs-inputs">
+                <input type="text" id="titulo" placeholder="Digite um Titulo">
+                <input type="text" id="texto" placeholder="Digite a descrição">
+                <input type="text" id="temp" placeholder="Digite a duração">
+            </div>
+            <button id="confirmar"><i class="fa-solid fa-circle-check"></i> Confirmar</button>
+            <button id="limpar"><i class="fa-solid fa-broom"></i> Limpar</button>
         </div>
         <div id="lista">
             <!-- <div id="pronto" class="tarefa">

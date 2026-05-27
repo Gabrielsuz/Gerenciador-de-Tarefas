@@ -2,6 +2,26 @@ if(localStorage.getItem('numeroTarefa') == null){
     localStorage.setItem('numeroTarefa', 0)
 }
 
+fetch("https://raw.githubusercontent.com/Gabrielsuz/Gerenciador-de-Tarefas/main/version.json")
+.then(res => res.json())
+.then(data => {
+
+    let versaoAtual = "1.0.0";
+
+    if(data.version != versaoAtual){
+
+        alert("Nova versão disponível!");
+
+    }
+
+});
+
+$("#versao").text("Versão: " + data.version);
+
+if(data.version != versaoAtual){
+    $("#update").show();
+}
+
 $(function() {
     $("#confirmar").click(function () { 
         let texto = $("#texto").val();
@@ -16,9 +36,9 @@ $(function() {
             alert("Insira uma descrição para a tarefa.")
         } else {
             if (titulo == "") {
-                $("#lista").append('<div id="pronto" data-id="'+ getNum +'" class="tarefa" ><div class="info"><button id="close">X</button> <button id="change"><i class="fa-solid fa-chart-simple"></i> </button> <span id="status">Concluída</span></div>  <h1>TAREFA #0'+getNum+'</h1><p>'+texto+'</p> </div>');
+                $("#lista").append('<div id="aguardando" data-id="'+ getNum +'" class="tarefa" ><div class="info"><button id="close">X</button> <button id="change"><i class="fa-solid fa-chart-simple"></i> </button> <span id="status">Em Andamento</span></div>  <h1>TAREFA #0'+getNum+'</h1><p>'+texto+'</p> </div>');
             } else {
-                $("#lista").append('<div id="pronto" data-id="'+ getNum +'" class="tarefa"><div class="info"><button id="close">X</button> <button id="change"><i class="fa-solid fa-chart-simple"></i> </button> <span id="status">Concluída</span></div>  <h1>'+titulo+'</h1><p>'+texto+'</p> </div>');
+                $("#lista").append('<div id="aguardando" data-id="'+ getNum +'" class="tarefa"><div class="info"><button id="close">X</button> <button id="change"><i class="fa-solid fa-chart-simple"></i> </button> <span id="status">Em Andamento</span></div>  <h1>'+titulo+'</h1><p>'+texto+'</p> </div>');
             }
         }
         
@@ -30,7 +50,11 @@ $(function() {
             }, tempo);
         console.log(tempo)
         } else {
-            alert("O tempo: "+ $("#temp").val() +" é invalido.")
+            if (tempo == 0) {
+                return
+            } else {
+                alert("O tempo: "+ $("#temp").val() +" é invalido.")
+            }
         }
         
     });
@@ -42,8 +66,11 @@ $(function() {
 
     $("#lista").on("click", "#close", function () {
         let obj = $(this).parent().parent()
-
-        obj.remove();
+        var pergunta = confirm  ("Você tem certeza que quer apagar essa tarefa?")
+        
+        if (pergunta === true) {
+            obj.remove();
+        }
     });
 
     $("#lista").on("click", "#change", function () {
@@ -51,11 +78,11 @@ $(function() {
         
         if ($(obj).attr("id") == "pronto") {
             obj.attr("id","aguardando")
-            // $("#status").text("Em Andamento");
+            $(this).parent().find("#status").text("Em Andamento");
             
         } else {
             obj.attr("id","pronto")
-            // $("#status").text("Concluída");
+            $(this).parent().find("#status").text("Concluída");
         }
     });
 

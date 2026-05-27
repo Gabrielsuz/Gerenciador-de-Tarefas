@@ -4,7 +4,15 @@
     margin: 0;
     color: inherit;
     border-style: none;
+    outline: inherit;
 }
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
 
 .tarefas  {
     display: flex;
@@ -16,12 +24,18 @@
 }
 
 .configs {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
+    gap: 1.2vw;
 }
 
-.configs > * {
+.configs-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vw;
+}
+
+/* .configs input {
     background-color: transparent;
     box-shadow: 3px 2px 51px -10px rgba(82,82,82,0.2) inset;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -29,11 +43,45 @@
     padding: 12px;
     border-radius: 12px;
     text-align: center;
+    margin-bottom: 12px;
+} */
+
+.configs input {
+    background-color: transparent;
+    /* box-shadow: 3px 2px 51px -10px rgba(82, 82, 82, 0.2) inset; */
+    outline: 2px solid rgba(41, 114, 136, 0.2);
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
-.configs > *:hover {
-    color: black;
-    background-color: rgba(82,82,82,0.1);
+#limpar {
+    background-color: rgb(255, 63, 63);
+    box-shadow: 3px 2px 51px -10px rgba(82,82,82,0.2) inset;
+    border: 1px solid rgba(65, 19, 19, 0.3);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#confirmar {
+    background-color: rgb(149, 255, 63);
+    box-shadow: 3px 2px 51px -10px rgba(82,82,82,0.2) inset;
+    border: 1px solid rgba(65, 19, 19, 0.3);
+    font-weight: bold;
+    color: rgb(43, 82, 17);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.configs button:hover,#limpar:hover,#confirmar:hover {
     box-shadow: 2px 2px 32px 5px rgba(115,115,115,0.2);
 }
 
@@ -72,6 +120,16 @@
     border-radius: 12px;
     width: 1.4vw;
     padding: 4px;
+}
+
+#update {
+    display: none;
+    background-color: rgb(255, 166, 0);
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 16px;
+    margin: 12px;
 }
 
 #change {
