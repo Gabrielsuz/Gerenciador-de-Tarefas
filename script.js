@@ -6,13 +6,9 @@ fetch("https://raw.githubusercontent.com/Gabrielsuz/Gerenciador-de-Tarefas/main/
 .then(res => res.json())
 .then(data => {
 
-    let versaoAtual = "1.0.0";
-
-    if(data.version != versaoAtual){
-
-        alert("Nova versão disponível!");
-
-    }
+    $("#versao").text(
+        "Versão: " + data.version
+    );
 
 });
 
